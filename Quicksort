@@ -1,0 +1,34 @@
+There are three steps to quicksort.
+
+1. Divide - partition the array into two subarrays so that each element of the first subarray is less than or equal to a chosen pivot. Also, each element in the second subarray is greater than the chosen pivot.
+2. Conquer - Sort the two subarrays via recursive calls to quicksort
+3. Combine - Since the subarrays are now sorted, combine the first subarray with the pivot and the second subarray
+
+QUICKSORT(A,p,r)
+  if p < r
+    q = PARTITION(A,p,r)
+    QUICKSORT(A,p,q-1)
+    QUICKSORT(A,q+1,r)
+  
+To sort the entire array call QUICKSORT(A,1,A.length)
+
+Partitioning the array:
+
+PARTITION(A,p,r)
+  x = A[r]                    <- select a pivot
+  i = p - 1                   
+  for j = p to r - 1
+    if A[j] <= x
+      i = i + 1
+      exchange A[i] with A[j]
+  exchange A[i+1] with A[r]
+  return i + 1
+  
+ Randomized Quicksort
+ 
+ In this version of Quicksort the pivot is chosen at random. The expected run time is O(n log n). Randomized is considered the go-to algorithm for sorting large data sets.
+ 
+ RANDOMIZED-PARTITION(A,p,r)
+  i = RANDOM(p,r)
+  exchange A[r] with A[i]
+  return PARTITION(A,p,r)
