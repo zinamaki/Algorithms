@@ -1,0 +1,33 @@
+Depth-first search (DFS)
+
+Depth-first serach explores edges out of the most recently discovered vertex v that still has unexplored edges leaving it.
+Once all of v's edges have been explored, the search backtracks to explore edges leaving the vertex from which v was discovered.
+This process continues until we have discovered all the vertices that are reachable from the original source vertex.
+If any undiscovered vertices remain, then depth-first search selects one of them as a new source, and it repeats the search from that source.
+The algorithm repeats this entire process until it has discovered every vertex.
+
+G - graph
+------------------------
+DFS(G)
+  for each vertex u in G
+    u.color =  WHITE                   // set each vertex white to symbolize they have not been visited
+    u.pi = NIL
+  time = 0
+  for each vertex u in G
+    if u.color == WHITE
+      DFS-VISIT(G.u)
+------------------------
+G - graph
+u - vertex to be explored
+
+DFS-VISIT(G,u)
+  time = time + 1
+  u.d = time
+  u.color = GRAY                      // color this vertex gray to symbolize it has been visited, yet not completely discovered
+  for each vertex v in G.adj(u)       // explore each vertex that are adjacent to this vertex
+    if v.color == WHITE
+      v.pi = u
+      DFS-VISIT(G,v)
+  u.color = BLACK                     // color the vertex black since all of its edges have been explored
+  time = time + 1
+  u.f = time
