@@ -8,11 +8,11 @@ p - first element in the array
 r - last element in the array
 
 BINARY-SEARCH(x,T,p,r)
-  low = p
-  high = max(p,r+1)
-  while low < high
-    mid = floor[(low+high)/2]
-    if x <= T[mid]
+  low = p                                                // set the low value to the first element in the array
+  high = max(p,r+1)                                      // set the high value to the max of low and the max value + 1
+  while low < high                                       // if low < high then we are not yet finished
+    mid = floor[(low+high)/2]                            // find the middle value
+    if x <= T[mid]                                       // if the current midpoint is larger than the element we are looking for, cut the array in half by moving the max to the mid
       high = mid
-    else low = mid + 1
-  return high
+    else low = mid + 1                                   // since the target element is larger than the midpoint, cut the array in half by moving the low value to mid + 1
+  return high                                            // now low is no longer less than high which means that we have either found the value, or the value is not in the array.
