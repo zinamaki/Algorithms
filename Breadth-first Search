@@ -1,0 +1,26 @@
+Breadth-first Search (BFS)
+
+Given a graph G, and a source vertex s, breadth-first search systematically explores the edges of G to discover 
+every vertex that is reachable from s.
+
+
+
+BFS(G,s)
+  for each vertex u in G - s              // for all vertices except the source
+    u.color = WHITE                       // initialize all vertices to default values of white,nil and infinity
+    u.d = infinity
+    u.pi = NIL
+  s.color = GRAY
+  s.d = 0
+  s.pi = NIL
+  Q = emptyset
+  ENGQUEUE(Q,s)
+  while Q dne emptyset
+    u = DEQUEUE(Q)
+    for each v in G.adj[u]
+      if v.color == WHITE
+        v.color = GRAY
+        v.d = u.d + 1
+        v.pi = u
+        ENQUEUE(Q,v)
+    u.color = BLACK
