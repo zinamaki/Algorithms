@@ -1,0 +1,12 @@
+The Five Dimensions of Interaction Design
+
+1D: words should be simple to understand, and written in such a way that they communicate information easily to the end user.
+2D: visual representations are all graphics or images, essentially everything that is not text. They should be used in moderation, so as to not overwhelm.
+3D: physical objects or space refers to the physical hardware, whether it’s a mouse and keyboard, or a mobile device a user interacts with.
+4D: time is the length that the user spends interacting with the first three dimensions. It includes the ways in which the user might measure progress, as well as sound and animation.
+5D: behavior was added by Kevin Silver in his article, What Puts the Design in Interaction Design. It is the emotions and reactions that the user has when interacting with the system.
+
+
+Mental models are the images in a user’s mind that inform their expectation of a certain interaction or system. By learning the user’s mental model, interaction designers can create systems that feel intuitive.
+Interface metaphors make use of known actions to lead users to new actions. For example, the trash icon on most computers resembles a physical trash can, in order to alert a user to the expected action.
+Affordances are things that are not only designed to do something, but that are designed to look like they are designed to do something. A button that looks like a physical object you can push, for example, is an affordance designed so that someone unfamiliar with the button will still understand how to interact with it.
