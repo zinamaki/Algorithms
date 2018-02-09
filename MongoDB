@@ -1,0 +1,19 @@
+Definitions:
+
+  collection - table
+  document - row
+  field - column
+
+MongoDB is made up of databases which contain collections (databases which contain tables). A collection (table) is made up of rows. Each row is made up of fields.
+
+Note: Core difference from relational databases is that columns are defined at the table level. This means that each row in that table shares the same columns. However, each document within a collection may have different fields.
+
+The special $lt, $lte, $gt, $gte and $ne are used for less than, less than or equal, greater than, greater than or equal and not equal operations. The $exists operator is used for matching the presence or absence of a field
+
+Upserts
+
+One of the more pleasant surprises of using update is that it fully supports upserts. An upsert updates the document if found or inserts it if not. Upserts are handy to have in certain situations and when you run into one, you'll know it. To enable upserting we pass a third parameter to update {upsert:true}.
+
+Ordering
+
+A few times now I've mentioned that find returns a cursor whose execution is delayed until needed. However, what you've no doubt observed from the shell is that find executes immediately. This is a behavior of the shell only. We can observe the true behavior of cursors by looking at one of the methods we can chain to find. The first that we'll look at is sort. We specify the fields we want to sort on as a JSON document, using 1 for ascending and -1 for descending.
